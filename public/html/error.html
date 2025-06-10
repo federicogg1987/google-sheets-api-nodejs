@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error de Envío</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css"> </head>
+<body>
+  <div class="container">
+    <div class="mensaje error">
+      <h2>¡Error al enviar datos a Google Sheets!</h2>
+      <p id="errorMessage">Ha ocurrido un error inesperado.</p>
+      <p><a href="/formulario">Volver al formulario</a></p>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const msg = params.get('msg');
+      if (msg) {
+        document.getElementById('errorMessage').textContent = decodeURIComponent(msg);
+      }
+    });
+  </script>
+</body>
+</html>

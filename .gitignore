@@ -1,0 +1,5 @@
+# Archivos y carpetas ignorados por Git
+node_modules/
+.env
+npm-debug.log
+.DS_Store

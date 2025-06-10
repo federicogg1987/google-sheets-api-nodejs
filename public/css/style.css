@@ -1,0 +1,189 @@
+body {
+    /* Fondo de degradado */
+    background: rgb(2, 83, 113);
+    background: -moz-linear-gradient(315deg, rgba(2, 83, 113, 1) 0%, rgba(0, 31, 48, 1) 100%);
+    background: -webkit-linear-gradient(315deg, rgba(2, 83, 113, 1) 0%, rgba(0, 31, 48, 1) 100%);
+    background: linear-gradient(315deg, rgba(2, 83, 113, 1) 0%, rgba(0, 31, 48, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#025371", endColorstr="#001f30", GradientType=1);
+
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center; /* Centrar el contenido dentro del contenedor */
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    display: flex; /* Usamos flexbox para alinear label e input en la misma línea */
+    align-items: center; /* Centra verticalmente el texto de la etiqueta con el input */
+}
+
+label {
+    display: block;
+    width: 120px; /* Ancho fijo para la etiqueta para una alineación consistente */
+    text-align: left; /* Alinea el texto de la etiqueta a la izquierda */
+    margin-right: 15px; /* Espacio entre la etiqueta y el input */
+    color: #555;
+    font-weight: 500;
+    flex-shrink: 0; /* Evita que la etiqueta se encoja en pantallas pequeñas */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    flex-grow: 1; /* Permite que el input ocupe el espacio restante */
+    width: auto; /* Anulamos el width fijo anterior, ahora se ajusta con flex-grow */
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.mensaje {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.mensaje h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.mensaje.exito {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.mensaje.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Estilos para la pantalla de datos enviados */
+.sent-data-display {
+    background-color: #eaf7ff; /* Un azul claro para diferenciar */
+    border: 1px solid #b3e0ff;
+    color: #004085;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin-top: 25px;
+    text-align: left; /* Alineamos el texto a la izquierda para mejor lectura de los datos */
+}
+
+.sent-data-display h2 {
+    color: #007bff; /* Color del título */
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.sent-data-display p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.sent-data-display p strong {
+    display: inline-block; /* Para alinear etiquetas y valores */
+    width: 120px; /* Ancho fijo para las etiquetas */
+    font-weight: 600;
+    color: #333;
+}
+
+.sent-data-display a {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.sent-data-display a:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    h1, h2 {
+        font-size: 24px;
+    }
+    button {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+    .form-group {
+        flex-direction: column; /* Apila los elementos verticalmente en móvil */
+        align-items: flex-start; /* Alinea los elementos a la izquierda en móvil */
+    }
+    label {
+        width: 100%; /* La etiqueta ocupa todo el ancho en móvil */
+        text-align: left; /* Mantiene la alineación a la izquierda */
+        margin-right: 0; /* Elimina el margen derecho en móvil */
+        margin-bottom: 8px; /* Asegura un margen inferior */
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+        width: calc(100% - 20px); /* El input ocupa casi todo el ancho en móvil */
+    }
+    .sent-data-display {
+        padding: 20px;
+    }
+    .sent-data-display p strong {
+        width: 90px; /* Ajuste para pantallas pequeñas */
+    }
+}

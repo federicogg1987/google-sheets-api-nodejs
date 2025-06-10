@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Datos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css"> </head>
+<body>
+  <div class="container">
+    <h1>Formulario de Ingreso de Datos</h1>
+    <form id="dataForm" action="/enviar-datos" method="POST">
+      <div class="form-group">
+        <label for="jerarquia">Jerarquía:</label>
+        <input type="text" id="jerarquia" name="jerarquia" required>
+      </div>
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required>
+      </div>
+      <div class="form-group">
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" name="dni" required pattern="[0-9]{7,8}" title="Ingrese un DNI válido (7 u 8 dígitos numéricos)">
+      </div>
+      <div class="form-group">
+        <label for="lugarRevista">Lugar de Revista:</label>
+        <input type="text" id="lugarRevista" name="lugarRevista" required>
+      </div>
+      <div class="form-group">
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{10}" title="Ingrese un número de teléfono válido (10 dígitos numéricos)">
+      </div>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <script src="/js/script.js"></script> </body>
+</html>

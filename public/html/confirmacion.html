@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmación de Envío</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css"> </head>
+<body>
+  <div class="container">
+    <div class="mensaje exito">
+      <h2>¡Datos enviados con éxito!</h2>
+      <p>Tu información ha sido registrada correctamente.</p>
+    </div>
+
+    <div class="sent-data-display">
+      <p><strong>Fecha y Hora:</strong> <span id="fechaHoraEnvio"></span></p>
+      <p><strong>Jerarquía:</strong> <span id="jerarquia"></span></p>
+      <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+      <p><strong>Apellido:</strong> <span id="apellido"></span></p>
+      <p><strong>DNI:</strong> <span id="dni"></span></p>
+      <p><strong>Lugar de Revista:</strong> <span id="lugarRevista"></span></p>
+      <p><strong>Teléfono:</strong> <span id="telefono"></span></p>
+      <p><a href="/formulario">Volver al formulario</a></p>
+    </div>
+  </div>
+  <script>
+    // Este script llenará los datos dinámicamente desde la URL o el localStorage
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      document.getElementById('fechaHoraEnvio').textContent = params.get('fechaHoraEnvio') || '';
+      document.getElementById('jerarquia').textContent = params.get('jerarquia') || '';
+      document.getElementById('nombre').textContent = params.get('nombre') || '';
+      document.getElementById('apellido').textContent = params.get('apellido') || '';
+      document.getElementById('dni').textContent = params.get('dni') || '';
+      document.getElementById('lugarRevista').textContent = params.get('lugarRevista') || '';
+      document.getElementById('telefono').textContent = params.get('telefono') || '';
+    });
+  </script>
+</body>
+</html>
