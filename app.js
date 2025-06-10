@@ -15,11 +15,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 async function getSheetsClient() {
-  const auth = new google.auth.GoogleAuth({
-    scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-  });
-  const authClient = await auth.getClient();
-  return google.sheets({ version: 'v4', auth: authClient });
+    const auth = new google.auth.GoogleAuth({
+        // Para credenciales desde un archivo local:
+        // keyFile: path.join(__dirname, 'ruta', 'a', 'tu', 'clave-servicio.json'),
+
+        // Para credenciales desde una variable de entorno en Render:
+        credentials: JSON.parse(process.env.KEY_FILE_PATH), // ¡Parsear el JSON de la variable de entorno!
+        scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+    });
+    const authClient = await auth.getClient();
+    return google.sheets({ version: 'v4', auth: authClient });
 }
 
 app.get('/', (req, res) => {
